@@ -32,21 +32,21 @@
     </v-row>
     <v-dialog v-model="form.dialog" persistent="persistent">
       <v-form v-model="form.valid" @submit.prevent="submit">
-        <v-card>
+        <v-card class="card">
           <v-card-title>
             <h1 class="text-center">{{ form._id.length > 0 ? '編輯活動' : '新增活動' }}</h1>
           </v-card-title>
           <v-card-text>
-            <v-row><v-col cols="4"></v-col>
-              <v-col cols="4">
+            <v-row><v-col cols="2"></v-col>
+              <v-col cols="8">
                 <v-text-field v-model="form.name" type="text" label="名稱" :rules="[rules.required]"></v-text-field>
               </v-col>
-              <v-col cols="4"></v-col>
-              <v-col cols="4"></v-col>
-              <v-col cols="4">
+              <v-col cols="2"></v-col>
+              <v-col cols="2"></v-col>
+              <v-col cols="8">
                 <v-textarea v-model="form.description" rows="3" auto-grow="auto-grow" label="說明" :rules="[rules.required]"></v-textarea>
               </v-col>
-              <v-col cols="4"></v-col>
+              <v-col cols="2"></v-col>
               <v-col cols="12">
                 <v-image-input v-model="form.image" class="mx-auto" removable="removable" :max-file-size="1"></v-image-input>
               </v-col>

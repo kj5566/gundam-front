@@ -31,36 +31,36 @@
   </v-row>
   <v-dialog v-model="form.dialog" persistent="persistent">
     <v-form v-model="form.valid" @submit.prevent="submit">
-      <v-card>
+      <v-card class="card">
         <v-card-title>
           <h1 class="text-center">{{ form._id.length > 0 ? '編輯商品' : '新增商品' }}</h1>
         </v-card-title>
         <v-card-text>
           <v-row>
-            <v-col cols="3"></v-col>
-            <v-col cols="6">
+            <v-col cols="2"></v-col>
+            <v-col cols="8">
               <v-text-field v-model="form.name" type="text" label="名稱" :rules="[rules.required]"></v-text-field>
             </v-col>
-            <v-col cols="3"></v-col>
-            <v-col cols="3"></v-col>
-            <v-col cols="3">
+            <v-col cols="2"></v-col>
+            <v-col cols="2"></v-col>
+            <v-col cols="4">
               <v-text-field v-model="form.price" type="number" label="價格" :rules="[rules.required, rules.price]"></v-text-field>
             </v-col>
 
-            <v-col cols="3">
+            <v-col cols="4">
               <v-text-field v-model="form.sales" type="number" label="銷量" :rules="[rules.required, rules.sales]"></v-text-field>
             </v-col>
-            <v-col cols="3"></v-col>
-            <v-col cols="3"></v-col>
-            <v-col cols="6">
+            <v-col cols="2"></v-col>
+            <v-col cols="2"></v-col>
+            <v-col cols="8">
               <v-textarea v-model="form.description" rows="1" auto-grow="auto-grow" label="說明" :rules="[rules.required]"></v-textarea>
             </v-col>
-            <v-col cols="3"></v-col>
-            <v-col cols="3"></v-col>
-            <v-col cols="6">
+            <v-col cols="2"></v-col>
+            <v-col cols="2"></v-col>
+            <v-col cols="8">
               <v-select v-model="form.category" :items="categories" label="分類" :rules="[rules.required]"></v-select>
             </v-col>
-
+            <v-col cols="2"></v-col>
             <v-col cols="12">
               <v-image-input v-model="form.image" class="mx-auto" removable="removable" :max-file-size="1"></v-image-input>
             </v-col>
