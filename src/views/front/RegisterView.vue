@@ -1,27 +1,28 @@
 <template>
   <v-app id="app">
+    <h1 class="space1"></h1>
     <div id="register">
-      <v-row>
-        <div class="m-a">
-          <h1 class="text-center h1-title">註冊</h1>
-        </div>
-        <v-divider></v-divider>
-        <v-col cols="4"></v-col>
-        <v-col cols="4" class="text-yellow-accent-3">
-          <v-form v-model="valid" @submit.prevent="register">
-            <v-text-field v-model="form.email" type="email" :rules="[rules.email, rules.required]" label="信箱"></v-text-field>
-            <v-text-field v-model="form.account" type="text" :rules="[rules.required, rules.length]" label="帳號" counter="20" maxlength="20"></v-text-field>
-            <v-text-field v-model="form.password" type="password" :rules="[rules.required, rules.length]" label="密碼" counter="20" maxlength="20"></v-text-field>
-            <v-text-field v-model="form.passwordConfirm" type="password" :rules="[rules.required, rules.length, rules.passwordConfirm]" label="確認密碼" counter="20" maxlength="20"></v-text-field>
-            <div class="text-center my-5">
-              <v-btn color="success" type="submit" size="large" :loading="loading">註冊</v-btn>
-            </div>
-          </v-form>
-        </v-col>
+      <v-card class="logincard">
+        <h1 class="text-center h1-title m-a">註冊</h1>
+        <h1 class="space1"></h1>
+        <v-row>
+          <v-col cols="3"></v-col>
+          <v-col cols="6" class="text-secondary">
+            <v-form v-model="valid" @submit.prevent="register">
+              <v-text-field v-model="form.email" type="email" :rules="[rules.email, rules.required]" label="信箱"></v-text-field>
+              <v-text-field v-model="form.account" type="text" :rules="[rules.required, rules.length]" label="帳號" counter="20" maxlength="20"></v-text-field>
+              <v-text-field v-model="form.password" type="password" :rules="[rules.required, rules.length]" label="密碼" counter="20" maxlength="20"></v-text-field>
+              <v-text-field v-model="form.passwordConfirm" type="password" :rules="[rules.required, rules.length, rules.passwordConfirm]" label="確認密碼" counter="20" maxlength="20"></v-text-field>
+              <div class="text-center my-5">
+                <v-btn color="success" type="submit" size="large" :loading="loading">註冊</v-btn>
+              </div>
+            </v-form>
+          </v-col>
 
-      </v-row>
+        </v-row>
+      </v-card>
     </div>
-    <div class="space"></div>
+
   </v-app>
 </template>
 

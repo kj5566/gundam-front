@@ -1,26 +1,28 @@
 <template>
   <v-app id="app">
+    <h1 class="space1"></h1>
     <div id="login">
-      <v-row>
-        <div class="m-a">
-          <h1 class="text-center h1-title ">登入</h1>
-        </div>
-        <v-divider></v-divider>
-        <v-col cols="12"></v-col>
-        <v-col cols="4"></v-col>
-        <v-col cols="4" class="text-center text-yellow-accent-3">
-          <v-form v-model="valid" @submit.prevent="login">
-            <v-text-field v-model="form.account" type="text" :rules="[rules.required, rules.length]" label="帳號" counter="20" maxlength="18"></v-text-field>
 
-            <v-text-field v-model="form.password" :type="show1 ? 'text' : 'password'" :rules="[rules.required, rules.length]" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" label="密碼" counter="20" @click:append="show1 = !show1"></v-text-field>
-            <div class="text-center my-5">
-              <v-btn color="success" type="submit" size="large" :loading="loading">登入</v-btn>
-            </div>
-          </v-form>
-        </v-col>
-      </v-row>
+      <v-card class="logincard">
+
+        <h1 class="text-center h1-title m-a">登入</h1>
+        <h1 class="space1"></h1>
+        <v-row>
+
+          <v-col cols="3"></v-col>
+          <v-col cols="6" class="text-center text-secondary">
+            <v-form v-model="valid" @submit.prevent="login">
+              <v-text-field v-model="form.account" type="text" :rules="[rules.required, rules.length]" label="帳號" counter="20" maxlength="18"></v-text-field>
+
+              <v-text-field v-model="form.password" :type="show1 ? 'text' : 'password'" :rules="[rules.required, rules.length]" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" label="密碼" counter="20" @click:append="show1 = !show1"></v-text-field>
+              <div class="text-center my-5">
+                <v-btn color="success" type="submit" size="large" :loading="loading">登入</v-btn>
+              </div>
+            </v-form>
+          </v-col>
+        </v-row>
+      </v-card>
     </div>
-    <div class="space2"></div>
   </v-app>
 </template>
 
