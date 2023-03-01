@@ -12,7 +12,7 @@
             <tr>
               <th>圖片</th>
               <th>名稱</th>
-              <th>時間</th>
+              <th>起標價格</th>
               <th>管理</th>
             </tr>
           </thead>
@@ -22,7 +22,7 @@
                 <v-img :src="bidding.image" :aspect-ratio="1" :width="200"></v-img>
               </td>
               <td>{{ bidding.name }}</td>
-              <td>{{ bidding.time }}</td>
+              <td>{{ bidding.price }}</td>
               <td>
                 <v-btn color="primary" icon="mdi-pencil" variant="text" @click="openDialog(idx)"></v-btn>
               </td>

@@ -38,11 +38,15 @@
                   <v-btn color="red" @click="updateCart(idx, product.quantity*-1)">刪除</v-btn>
                 </td>
               </tr>
-
+              <tr v-if="cart.length === 0">
+                <td class="text-center big" colspan="6">沒有商品</td>
+              </tr>
             </tbody>
 
           </v-table>
+
           <h1 class="bg-white"><br></h1>
+
           <h1 class="text-center bg-white">
             <v-col cols="6" class="m-a">
               <v-text-field
@@ -63,10 +67,6 @@
               <p>總金額 {{ totalPrice }}</p>
               <v-btn color="green" :disabled="!canCheckout" @click="onCheckoutBtnClick">結帳</v-btn>
             </v-col>
-
-            <tr v-if="cart.length === 0">
-              <td class="text-center" colspan="6">沒有商品</td>
-            </tr>
           </h1>
         </v-col>
         <v-col cols="12">
